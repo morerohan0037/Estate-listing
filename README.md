@@ -1,4 +1,4 @@
-# EarthlyStays - Travel Planner
+# EarthlyStays - Estate Listings
 
 EarthlyStays is a full-stack travel planning application that allows users to explore, create, and manage travel listings. Users can browse listings, leave reviews, and manage their own listings. The project is built using modern web technologies, including React, Node.js, Express, MongoDB, and TailwindCSS.
 
