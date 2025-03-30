@@ -21,11 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS configuration
-app.use(cors({
-  origin: process.env.FRONTEND_URL,  // ✅ Allow only your React frontend
-  credentials: true                 // ✅ Allow cookies, sessions, JWT
-}));
-
+app.use(cors());
 // Initialize Passport
 app.use(passport.initialize());
 
