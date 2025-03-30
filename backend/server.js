@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path'
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
@@ -21,11 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS configuration
-app.use(cors({
-  origin: process.env.FRONTEND_URL,  // ✅ Allow only your React frontend
-  credentials: true                 // ✅ Allow cookies, sessions, JWT
-}));
-
+app.use(cors());
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 // Initialize Passport
 app.use(passport.initialize());
 
@@ -41,6 +39,9 @@ const connectDB = async () => {
 };
 connectDB();
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+});
 // Routes
 app.use("/api/listings", listingRoutes);
 app.use("/api/users", userRoutes);
