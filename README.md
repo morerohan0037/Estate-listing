@@ -1,4 +1,4 @@
-# EarthlyStays - Travel Planner
+# EarthlyStays
 
 EarthlyStays is a full-stack web application designed to help users explore, list, and book unique travel accommodations. The platform allows users to browse listings, add their own properties, and leave reviews for others.
 
